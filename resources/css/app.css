@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-items a {
+    position: relative;
+}
+
+.nav-items a::before:not(:is(.aktif)) {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: #b71c1c;
+    border-radius: 50px;
+    transform: scaleX(0);
+    transition: transform 0.2s linear;
+}
+
+.nav-items a:hover::before {
+    transform: scaleX(1);
+}
+
+.aktif {
+    font-weight: 700;
+    color: #b71c1c;
+}
+
+.aktif::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: #b71c1c;
+    border-radius: 50px;
+}
+
+.border-top-left::after {
+    content: "";
+    position: absolute;
+    /* bottom: -6px; */
+    top: -7px;
+    height: 3px;
+    width: 65px;
+    left: 0;
+    background: #f44336;
+    border-radius: 50px;
+}
+
+.border-top-center::after {
+    content: "";
+    position: absolute;
+    /* bottom: -6px; */
+    top: -7px;
+    height: 3px;
+    width: 5%;
+    background: #f44336;
+    border-radius: 50px;
+}
+
+.icon-stroke {
+    -webkit-text-stroke: 2px #8B0000; /* red-800 */
+    color: transparent;
+}
