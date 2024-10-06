@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-red-900 relative">
+<div class="min-h-screen bg-red-950 relative">
     <div class="bg-white absolute w-[70%] right-0 h-full"></div>
     <div class="p-10">
         <div
@@ -88,7 +88,7 @@
     </div>
     <div>
         <h1 class="font-bold text-5xl relative border-top-left ">Apa Itu <br> Kegiatan CSR</h1>
-        <div class="text-lg text-gray-600">
+        <div class="text-lg text-gray-600 w-[85%]">
             <p class="py-8">
                 Corporate Social Responsibility (CSR) merupakan konsep di mana perusahaan secara sadar
                 mengintegrasikan kepedulian sosial dan lingkungan ke dalam operasional bisnisnya. Ini melibatkan
@@ -109,11 +109,11 @@
 </div>
 
 <div class="min-h-screen bg-gray-900 px-20 text-white">
-    <div class="py-16">
+    <div class="pt-20">
         <h1 class="text-5xl font-bold pb-4 relative border-top-left">Sektor CSR</h1>
         <p>Bidang sektor CSR Kabupaten Cirebon yang tersedia</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10">
         <div class="w-[80%]">
             <ul class="space-y-0 relative">
                 <div class="absolute left-0 top-0 h-full border-l-4 border-gray-700"></div>
@@ -153,7 +153,7 @@
                 <img src="https://s3-alpha-sig.figma.com/img/2462/6032/cdc89d6627b08fb5dbd4e678aaae5c38?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Q4eEsPFyY5AfnGb~RH2FDSQbPRcTqendE~SFBsq7cfMOy80fWqJZeNDAyEiFHdxR7yQt6SQ~3R6DbyRxN6DSGvoryBaBsYrLRdrzlQyv065~mgdjr7l6bBXK5rPT96SQayo036fc50LB7YfGwGGlexSFki~0EJRvjLZNcgv1qNwymayp10EAbXqRqoN5Zvf3LTiPEoKh1Krr~fvgqeMOOumzyEd9-hq8dbX6dt2gGqALuyHIE6~FAfvghDTEGpaYbHYbsSqmaKpteiVVqf7mjhJuV3epS85E4Mva-vdHybYo~YNAAMrGNyGwm7~g0ls78STv7ulufMWQ4c2xVBTiVg__"
                     class=" h-44">
             </div>
-            <p class="mt-4">CSR dalam lingkup sosial merupakan komitmen perusahaan untuk memberikan kontribusi
+            <p class="mt-4 w-[85%]">CSR dalam lingkup sosial merupakan komitmen perusahaan untuk memberikan kontribusi
                 positif bagi masyarakat di sekitarnya. Ini melibatkan berbagai kegiatan yang bertujuan meningkatkan
                 kualitas hidup masyarakat, seperti program pendidikan, kesehatan, pemberdayaan ekonomi, dan
                 pengentasan kemiskinan. Melalui CSR sosial, perusahaan tidak hanya memenuhi tanggung jawab
@@ -173,7 +173,7 @@
 <div class="px-20 py-20 grid grid-cols-2">
     <div>
         <h1 class="text-5xl font-bold py-3 relative border-top-left">Sambutan Bupati <br> Kabupaten Cirebon</h1>
-        <div class="py-3 text-gray-600">
+        <div class="py-3 text-gray-600 w-[85%]">
             <p class="pb-2">Elit sit vitae nulla porttitor nulla platea lectus ultrices cursus. Proin mi nisi mi
                 sed amet.
                 Aliquam sit sed turpis ut sociis consequat nibh enim malesuada. Eget vestibulum volutpat cursus

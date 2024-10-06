@@ -1,3 +1,5 @@
+@include('layouts.partials.contact')
+
 <footer class="w-full h-[100px] bg-gray-900 text-white px-20 py-10 bottom-0">
     <div class="flex justify-between">
         <div>
