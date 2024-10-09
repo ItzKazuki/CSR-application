@@ -25,6 +25,8 @@ class ActivityResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\FileUpload::make('image_activity')
+                ->columnSpanFull(),
                 Forms\Components\TextInput::make('title_activity')
                     ->required()
                     ->maxLength(255),

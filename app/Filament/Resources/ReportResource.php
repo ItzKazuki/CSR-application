@@ -2,16 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ReportResource\Pages;
-use App\Filament\Resources\ReportResource\RelationManagers;
-use App\Models\Report;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Report;
+use App\Models\Sector;
+use App\Models\Project;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ReportResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ReportResource\RelationManagers;
 
 class ReportResource extends Resource
 {
@@ -26,12 +28,14 @@ class ReportResource extends Resource
                 Forms\Components\TextInput::make('title_report')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('sector_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('project_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('sector_id')
+                    ->label('Sektor')
+                    ->options(Sector::all()->pluck('sector_name'))
+                    ->searchable(),
+                Forms\Components\Select::make('project_id')
+                    ->label('Proyek')
+                    ->options(Project::all()->pluck('project_name'))
+                    ->searchable(),
                 Forms\Components\DatePicker::make('send_at')
                     ->required(),
                 Forms\Components\TextInput::make('realization')
@@ -51,11 +55,13 @@ class ReportResource extends Resource
     {
         return $table
             ->columns([
+                Forms\Components\FileUpload::make('image_report')
+                    ->columnSpanFull(),
                 Tables\Columns\TextColumn::make('title_report')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('sector_id')
-                    ->numeric()
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('sector_id')
+                //     ->numeric()
+                //     ->sortable(),
                 Tables\Columns\TextColumn::make('project_id')
                     ->numeric()
                     ->sortable(),

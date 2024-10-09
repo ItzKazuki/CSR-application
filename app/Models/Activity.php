@@ -12,6 +12,7 @@ class Activity extends Model
 
     protected $fillable = [
         'title_activity',
+        'image_activity',
         'description'
     ];
 }

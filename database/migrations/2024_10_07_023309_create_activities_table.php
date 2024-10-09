@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('title_activity');
-            $table->string('image');
+            $table->string('image_activity');
             $table->text('description');
             $table->timestamps();
         });

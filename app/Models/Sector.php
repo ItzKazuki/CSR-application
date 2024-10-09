@@ -11,6 +11,7 @@ class Sector extends Model
 
     protected $fillable = [
         'sector_name',
-        'description'
+        'description',
+        'image_sector'
     ];
 }

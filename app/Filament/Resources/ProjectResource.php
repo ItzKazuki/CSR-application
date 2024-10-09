@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProjectResource\Pages;
-use App\Filament\Resources\ProjectResource\RelationManagers;
-use App\Models\Project;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Sector;
+use App\Models\Project;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ProjectResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ProjectResource\RelationManagers;
 
 class ProjectResource extends Resource
 {
@@ -25,10 +26,14 @@ class ProjectResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('project_name')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('sector_id')
-                    ->required()
-                    ->numeric(),
+                    ->maxLength(255)
+                    ->columnSpanFull(),
+                Forms\Components\Select::make('sector_id')
+                    ->label('Sector')
+                    ->mulitply()
+                    ->options(Sector::all()->pluck('sector_name'))
+                    ->searchable()
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('subdistric_name')
                     ->required()
                     ->maxLength(255),
@@ -36,11 +41,16 @@ class ProjectResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('end_date')
                     ->required(),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\MarkdownEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Toggle::make('state')
-                    ->required(),
+                // Forms\Components\Toggle::make('state')
+                //     ->required(),
+                Forms\Components\FileUpload::make('image_project')
+                ->image()
+                ->disk('public')
+                ->directory('projects')
+                ->columnSpanFull(),
             ]);
     }
 

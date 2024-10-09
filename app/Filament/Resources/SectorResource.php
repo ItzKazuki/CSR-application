@@ -23,8 +23,11 @@ class SectorResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('sector_image')
-                ->columnSpanFull(),
+                Forms\Components\FileUpload::make('image_sector')
+                    ->image()
+                    ->disk('public')
+                    ->directory('sectors')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('sector_name')
                     ->required()
                     ->maxLength(255)
@@ -41,19 +44,14 @@ class SectorResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('sector_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable()
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
