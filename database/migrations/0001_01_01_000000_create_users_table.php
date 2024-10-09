@@ -13,10 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('company_email')->nullable();
+            $table->string('company_number')->nullable();
+            $table->string('company_address')->nullable();
+            $table->string('company_description')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role')->default('mitra');
+            $table->string('state_mitra')->default('Pengajuan'); // Pengajuann, Pending, Terverifikasi
+            $table->boolean('company_state')->default(true); // true for active or not
             $table->rememberToken();
             $table->timestamps();
         });
